@@ -1,2 +1,2 @@
 # webdrivertest
-TA mentoring program tests for webdriver
+This repositiory includes tests for webdriver from test automation mentoring program.
