@@ -9,7 +9,7 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <suiteFile>testng.xml</suiteFile>
+        <suiteFile>src/test/resources/testng.xml</suiteFile>
     </properties>
 
     <dependencyManagement>
