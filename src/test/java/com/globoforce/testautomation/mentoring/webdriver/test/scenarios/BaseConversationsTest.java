@@ -1,6 +1,5 @@
 package com.globoforce.testautomation.mentoring.webdriver.test.scenarios;
 
-import com.globoforce.testautomation.mentoring.webdriver.test.BaseTest;
 import org.openqa.selenium.By;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
