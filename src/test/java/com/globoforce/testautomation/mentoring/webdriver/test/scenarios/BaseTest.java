@@ -1,4 +1,4 @@
-package com.globoforce.testautomation.mentoring.webdriver.test;
+package com.globoforce.testautomation.mentoring.webdriver.test.scenarios;
 
 
 import org.openqa.selenium.By;

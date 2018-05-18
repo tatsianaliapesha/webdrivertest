@@ -1,6 +1,7 @@
-package com.globoforce.testautomation.mentoring.webdriver.test.scenarios;
+package com.globoforce.testautomation.mentoring.webdriver.test.scenarios.checkin;
 
 import com.globoforce.testautomation.mentoring.webdriver.test.constants.CheckinConstants;
+import com.globoforce.testautomation.mentoring.webdriver.test.scenarios.BaseConversationsTest;
 import org.openqa.selenium.*;
 import org.testng.Assert;
 import org.testng.annotations.Test;
