@@ -12,14 +12,12 @@
             <class name="com.globoforce.testautomation.mentoring.webdriver.test.scenarios.checkin.EditCheckinTest"/>
         </classes>
     </test>
-
     <test name="Chrome Test">
         <parameter name="browser" value="chrome"/>
         <classes>
             <class name="com.globoforce.testautomation.mentoring.webdriver.test.scenarios.checkin.EditCheckinTest"/>
         </classes>
     </test>
-
     <test name="IE Test">
         <parameter name="browser" value="ie"/>
         <classes>

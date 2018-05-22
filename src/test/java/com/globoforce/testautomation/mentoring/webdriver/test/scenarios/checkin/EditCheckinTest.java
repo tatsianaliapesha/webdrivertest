@@ -1,7 +1,7 @@
 package com.globoforce.testautomation.mentoring.webdriver.test.scenarios.checkin;
 
-import com.globoforce.testautomation.mentoring.webdriver.test.pages.ConversationsDashboard;
 import com.globoforce.testautomation.mentoring.webdriver.test.scenarios.BaseConversationsTest;
+import com.globoforce.testautomation.mentoring.webdriver.test.services.checkin.CheckinService;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -12,22 +12,22 @@ public class EditCheckinTest extends BaseConversationsTest {
     private String checkinTitleInit;
     private String checkinTitleUpd;
     private Random rand = new Random();
-    ConversationsDashboard conversationsDashboard;
+    CheckinService checkinService;
 
     @Test
     public void createCheckinWithManager() {
         checkinTitleInit = String.valueOf(rand.nextInt(999999));
-        conversationsDashboard = new ConversationsDashboard(driver);
-        conversationsDashboard.addCheckin(checkinTitleInit, checkinTitleInit);
-        Assert.assertTrue(conversationsDashboard.isCheckinOnSwimlane(checkinTitleInit), "Checkin with title " + checkinTitleInit + "was not created.");
+        checkinService = new CheckinService(driver);
+        checkinService.createCheckin(checkinTitleInit, checkinTitleInit);
+        Assert.assertTrue(checkinService.isCheckinOnSwimlane(checkinTitleInit), "Checkin with title " + checkinTitleInit + "was not created.");
     }
 
     @Test(dependsOnMethods = "createCheckinWithManager")
     public void updateCreatedCheckin() {
-        conversationsDashboard.openCheckin(checkinTitleInit);
+        checkinService.openCheckin(checkinTitleInit);
         checkinTitleUpd = String.valueOf(rand.nextInt(999999));
-        conversationsDashboard.editCheckinTitle(checkinTitleUpd);
-        Assert.assertTrue(conversationsDashboard.isCheckinOnSwimlane(checkinTitleUpd), "Checkin with title " + checkinTitleInit + "was not found.");
+        checkinService.editCheckinTitle(checkinTitleUpd);
+        Assert.assertTrue(checkinService.isCheckinOnSwimlane(checkinTitleUpd), "Checkin with title " + checkinTitleUpd + "was not found.");
     }
 
 

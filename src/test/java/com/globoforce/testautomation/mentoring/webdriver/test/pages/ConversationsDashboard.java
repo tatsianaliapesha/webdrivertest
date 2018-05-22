@@ -15,20 +15,33 @@ public class ConversationsDashboard extends BasePage {
         super(driver);
     }
 
-    public void addCheckin(String title, String description) {
-        checkinSwimlane.clickOnNewCheckinButton();
-        checkinLightBox.createCheckin(title, description);
+
+    public CheckinSwimlane getCheckinSwimlane() {
+        return checkinSwimlane;
     }
 
-    public void editCheckinTitle(String title) {
-        checkinLightBox.clickEditButton();
+    public CheckinLightBox getCheckinLightBox() {
+        return checkinLightBox;
+    }
+
+    public ConversationsDashboard setCheckinTitle(String title) {
         checkinLightBox.setTitle(title);
-        checkinLightBox.clickSaveButton();
-        checkinLightBox.closeLightBox();
+        return this;
     }
 
-    public void openCheckin(String checkinTitle) {
-        checkinSwimlane.getCheckinTitleElement(checkinTitle).click();
+    public ConversationsDashboard setCheckinDescription(String description) {
+        checkinLightBox.setDescription(description);
+        return this;
+    }
+
+    public ConversationsDashboard clickOnCheckinActionButton() {
+        checkinLightBox.clickActionButton();
+        return this;
+    }
+
+    public ConversationsDashboard clickOnCloseLightboxButton() {
+        checkinLightBox.closeLightBox();
+        return this;
     }
 
     public boolean isCheckinOnSwimlane(String checkinTitle) {
