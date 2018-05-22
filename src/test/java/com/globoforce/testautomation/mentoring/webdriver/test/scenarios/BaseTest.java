@@ -60,7 +60,7 @@ public class BaseTest {
                 .until(ExpectedConditions
                         .elementToBeClickable(webElement));
     }
-
+/*
     public WebElement getElementByXpath(String locator, String parameter) {
         By webElementLocator = By.xpath(String.format(locator, parameter));
         return driver.findElement(webElementLocator);
@@ -69,5 +69,5 @@ public class BaseTest {
     public WebElement getElementByXpath(String locator) {
         By webElementLocator = By.xpath(locator);
         return driver.findElement(webElementLocator);
-    }
+    }*/
 }
