@@ -35,13 +35,14 @@ public class BaseTest {
             driver = new ChromeDriver();
         }
         if (browser.equals("ie")) {
-            InternetExplorerOptions internetExplorerOptions = new InternetExplorerOptions();
+            /*InternetExplorerOptions internetExplorerOptions = new InternetExplorerOptions();
             internetExplorerOptions.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS, true);
             internetExplorerOptions.setCapability(InternetExplorerDriver.IGNORE_ZOOM_SETTING, true);
             internetExplorerOptions.setCapability(InternetExplorerDriver.ENABLE_PERSISTENT_HOVERING, false);
-            internetExplorerOptions.setCapability(InternetExplorerDriver.NATIVE_EVENTS, false);
+            internetExplorerOptions.setCapability(InternetExplorerDriver.NATIVE_EVENTS, false);*/
             System.setProperty("webdriver.ie.driver", ".\\src\\test\\resources\\IEDriverServer.exe");
-            driver = new InternetExplorerDriver(internetExplorerOptions);
+            driver = new InternetExplorerDriver();
+           // driver = new InternetExplorerDriver(internetExplorerOptions);
         }
 
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
