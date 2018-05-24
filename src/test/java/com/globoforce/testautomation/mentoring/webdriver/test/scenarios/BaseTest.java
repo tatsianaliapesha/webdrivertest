@@ -42,7 +42,7 @@ public class BaseTest {
             internetExplorerOptions.setCapability(InternetExplorerDriver.NATIVE_EVENTS, false);*/
             System.setProperty("webdriver.ie.driver", ".\\src\\test\\resources\\IEDriverServer.exe");
             driver = new InternetExplorerDriver();
-           // driver = new InternetExplorerDriver(internetExplorerOptions);
+            // driver = new InternetExplorerDriver(internetExplorerOptions);
         }
 
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);

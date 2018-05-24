@@ -16,8 +16,8 @@ public class BaseConversationsTest extends BaseTest {
     @BeforeClass
     @Parameters({"clientName", "userId", "userName", "password"})
     public void loginToConversations(String clientName, String userId, String userName, String password) {
-       loginPage = new LoginPage(driver);
-       loginPage.open(clientName, userId);
-       conversationsDashboard = loginPage.login(userName, password);
+        loginPage = new LoginPage(driver);
+        loginPage.open(clientName, userId);
+        conversationsDashboard = loginPage.login(userName, password);
     }
 }

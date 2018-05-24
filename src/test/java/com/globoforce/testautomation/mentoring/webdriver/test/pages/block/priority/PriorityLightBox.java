@@ -1,28 +1,22 @@
-package com.globoforce.testautomation.mentoring.webdriver.test.pages.block.checkin;
+package com.globoforce.testautomation.mentoring.webdriver.test.pages.block.priority;
 
 import org.openqa.selenium.support.FindBy;
 import org.testng.util.Strings;
-import ru.yandex.qatools.htmlelements.annotations.Name;
 import ru.yandex.qatools.htmlelements.element.Button;
 import ru.yandex.qatools.htmlelements.element.HtmlElement;
 import ru.yandex.qatools.htmlelements.element.TextInput;
 
+@FindBy(xpath = "//gf-priority-details")
+public class PriorityLightBox extends HtmlElement {
 
-@FindBy(xpath = "//gf-checkin-details")
-public class CheckinLightBox extends HtmlElement {
-
-    @FindBy(xpath = "//input[@class='checkinDetails-titleInput normalizePlaceholder']")
+    @FindBy(xpath = "//input[@class='mergedInputs-inputTitle normalizePlaceholder']")
     private TextInput titleTextInput;
 
     @FindBy(xpath = "//textarea[@class='superTextarea-field']")
     private TextInput descriptionTextInput;
 
-    @FindBy(xpath = "//button[@class='btn btn--checkin']")
+    @FindBy(xpath = "//button[@class='btn btn--priority']")
     private Button actionButton;
-
-    @Name("'X' icon")
-    @FindBy(xpath = "//button[@class='lightboxContainer-close']")
-    private Button closeIcon;
 
     public void setTitle(String title) {
         if (!Strings.isNullOrEmpty(title)) {
@@ -40,10 +34,6 @@ public class CheckinLightBox extends HtmlElement {
 
     public void clickActionButton() {
         actionButton.click();
-    }
-
-    public void closeLightBox() {
-        closeIcon.click();
     }
 
 }
