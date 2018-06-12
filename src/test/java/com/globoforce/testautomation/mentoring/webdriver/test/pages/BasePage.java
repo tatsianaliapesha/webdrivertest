@@ -3,9 +3,11 @@ package com.globoforce.testautomation.mentoring.webdriver.test.pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import ru.yandex.qatools.htmlelements.loader.HtmlElementLoader;
 
+import java.time.Duration;
 import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
 
@@ -20,7 +22,6 @@ public class BasePage {
         webdriver = driver;
         webdriver.manage().timeouts().pageLoadTimeout(PAGE_LOAD_TIMEOUT, TimeUnit.SECONDS);
         webdriver.manage().timeouts().implicitlyWait(IMPLICITLY_WAIT_TIMEOUT, TimeUnit.SECONDS);
-        //PageFactory.initElements(webdriver, this);
         HtmlElementLoader.populatePageObject(this, this.webdriver);
     }
 
@@ -45,5 +46,12 @@ public class BasePage {
 
     public void navigateToUrl(String url) {
         webdriver.navigate().to(url);
+    }
+
+    public void waitUntilClickable(WebElement webElement) {
+        new WebDriverWait(webdriver, 10)
+                .pollingEvery(Duration.ofSeconds(1))
+                .until(ExpectedConditions
+                        .elementToBeClickable(webElement));
     }
 }

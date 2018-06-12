@@ -10,10 +10,10 @@ import org.openqa.selenium.WebElement;
 
 public class ConversationsDashboard extends BasePage {
 
-    CheckinSwimlane checkinSwimlane;
-    CheckinLightBox checkinLightBox;
-    PriorityLightBox priorityLightBox;
-    PrioritySwimlane prioritySwimlane;
+    private CheckinSwimlane checkinSwimlane;
+    private CheckinLightBox checkinLightBox;
+    private PriorityLightBox priorityLightBox;
+    private PrioritySwimlane prioritySwimlane;
 
     public ConversationsDashboard(WebDriver driver) {
         super(driver);

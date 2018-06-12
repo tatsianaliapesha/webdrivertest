@@ -4,11 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import ru.yandex.qatools.htmlelements.element.HtmlElement;
-import ru.yandex.qatools.htmlelements.element.Link;
-import ru.yandex.qatools.htmlelements.element.TextBlock;
-import ru.yandex.qatools.htmlelements.element.TextInput;
 
-import java.util.List;
 
 @FindBy(xpath = "//gf-checkin-list")
 public class CheckinSwimlane extends HtmlElement {

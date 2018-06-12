@@ -12,7 +12,7 @@ public class EditCheckinTest extends BaseConversationsTest {
     private String checkinTitleInit;
     private String checkinTitleUpd;
     private Random rand = new Random();
-    CheckinService checkinService;
+    private CheckinService checkinService;
 
     @Test
     public void createCheckinWithManager() {

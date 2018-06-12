@@ -11,7 +11,7 @@ public class CreatePriorityTest extends BaseConversationsTest {
 
     private String priorityTitle;
     private Random rand = new Random();
-    PriorityService priorityService;
+    private PriorityService priorityService;
 
     @Test
     public void createPriority() {
