@@ -1,6 +1,8 @@
 package com.globoforce.testautomation.mentoring.webdriver.test.services.checkin;
 
+import com.globoforce.testautomation.mentoring.webdriver.test.entities.CheckinVO;
 import com.globoforce.testautomation.mentoring.webdriver.test.pages.ConversationsDashboard;
+import com.globoforce.testautomation.mentoring.webdriver.test.pages.checkin.CheckinLightboxPage;
 import org.openqa.selenium.WebDriver;
 
 public class CheckinService {
@@ -11,10 +13,11 @@ public class CheckinService {
         this.driver = driver;
     }
 
-    public void createCheckin(String title, String description) {
-        ConversationsDashboard conversationsDashboard = new ConversationsDashboard(this.driver);
+    public void createCheckin(CheckinVO checkinVO) {
+        ConversationsDashboard conversationsDashboard = new ConversationsDashboard(driver);
         conversationsDashboard.getCheckinSwimlane().clickOnNewCheckinButton();
-        conversationsDashboard.setCheckinTitle(title).setCheckinDescription(description).clickOnCheckinActionButton();
+        CheckinLightboxPage checkinLightboxPage = new CheckinLightboxPage(driver);
+        checkinLightboxPage.setCheckinTitle(checkinVO.getTitle()).setCheckinDescription(checkinVO.getDescription()).clickOnCheckinActionButton();
     }
 
     public void openCheckin(String checkinTitle) {
@@ -25,7 +28,7 @@ public class CheckinService {
     }
 
     public void editCheckinTitle(String title) {
-        new ConversationsDashboard(this.driver)
+        new CheckinLightboxPage(this.driver)
                 .clickOnCheckinActionButton()
                 .setCheckinTitle(title)
                 .clickOnCheckinActionButton()

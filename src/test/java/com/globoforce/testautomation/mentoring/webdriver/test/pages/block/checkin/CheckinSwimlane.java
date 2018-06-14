@@ -18,17 +18,16 @@ public class CheckinSwimlane extends HtmlElement {
         return newCheckinLink;
     }
 
-    public void clickOnNewCheckinButton(){
+    public void clickOnNewCheckinButton() {
         newCheckinLink.click();
     }
 
 
- public WebElement getCheckinTitleElement(String checkinTitle){
-     String checkinCardXp = String.format(CHECKIN_CARD_TITLE, checkinTitle);
-     WebElement checkinCardTitle = findElement(By.xpath(checkinCardXp));
-     return checkinCardTitle;
- }
-
+    public WebElement getCheckinTitleElement(String checkinTitle) {
+        String checkinCardXp = String.format(CHECKIN_CARD_TITLE, checkinTitle);
+        WebElement checkinCardTitle = findElement(By.xpath(checkinCardXp));
+        return checkinCardTitle;
+    }
 
 
 }

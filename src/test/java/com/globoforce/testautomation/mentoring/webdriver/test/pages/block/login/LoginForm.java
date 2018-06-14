@@ -18,21 +18,21 @@ public class LoginForm extends HtmlElement {
     @FindBy(id = "signIn-button")
     private Button logInButton;
 
-    private void setUsername(String username) {
+    public void setUsername(String username) {
         if (!Strings.isNullOrEmpty(username)) {
             usernameTextInput.clear();
             usernameTextInput.sendKeys(username);
         }
     }
 
-    private void setPassword(String password) {
+    public void setPassword(String password) {
         if (!Strings.isNullOrEmpty(password)) {
             passwordTextInput.clear();
             passwordTextInput.sendKeys(password);
         }
     }
 
-    private void clickOnLogInButton() {
+    public void clickOnLogInButton() {
         logInButton.click();
     }
 

@@ -1,23 +1,32 @@
 package com.globoforce.testautomation.mentoring.webdriver.test.scenarios.priority;
 
+import com.globoforce.testautomation.mentoring.webdriver.test.entities.PriorityVO;
 import com.globoforce.testautomation.mentoring.webdriver.test.scenarios.BaseConversationsTest;
 import com.globoforce.testautomation.mentoring.webdriver.test.services.priority.PriorityService;
+import com.globoforce.testautomation.mentoring.webdriver.test.factory.priority.PriorityStaticFactory;
 import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import java.util.Random;
 
 public class CreatePriorityTest extends BaseConversationsTest {
 
-    private String priorityTitle;
+    protected String priorityTitle;
     private Random rand = new Random();
     private PriorityService priorityService;
+    private PriorityVO priorityVO;
+
+    @BeforeClass
+    public void setUpInitialData() {
+        priorityTitle = String.valueOf(rand.nextInt(999999));
+        priorityVO = PriorityStaticFactory.createRandomPriority(priorityTitle, priorityTitle);
+    }
 
     @Test
     public void createPriority() {
-        priorityTitle = String.valueOf(rand.nextInt(999999));
         priorityService = new PriorityService(driver);
-        priorityService.createPriority(priorityTitle, priorityTitle);
+        priorityService.createPriority(priorityVO);
         Assert.assertTrue(priorityService.isPriorityOnSwimlane(priorityTitle), "Priority with title " + priorityTitle + "was not created.");
     }
 }

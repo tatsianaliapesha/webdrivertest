@@ -1,6 +1,6 @@
 package com.globoforce.testautomation.mentoring.webdriver.test.scenarios;
 
-import com.globoforce.testautomation.mentoring.webdriver.test.pages.LoginPage;
+import com.globoforce.testautomation.mentoring.webdriver.test.services.login.LoginService;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 
@@ -10,9 +10,10 @@ public class BaseConversationsTest extends BaseTest {
 
     @BeforeClass
     @Parameters({"clientName", "userId", "userName", "password"})
-    public void loginToConversations(String clientName, String userId, String userName, String password) {
-        LoginPage loginPage = new LoginPage(driver);
-        loginPage.open(clientName, userId);
-        loginPage.login(userName, password);
+    public void loginToConversations(String clientName, String userId, String username, String password) {
+        String url = String.format(URL, clientName, userId);
+        driver.navigate().to(url);
+        LoginService loginService = new LoginService(driver);
+        loginService.login(username, password);
     }
 }

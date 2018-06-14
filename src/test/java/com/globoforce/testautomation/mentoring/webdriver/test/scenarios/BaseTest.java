@@ -32,7 +32,7 @@ public class BaseTest {
             driver = new InternetExplorerDriver();
         }
 
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
         driver.manage().window().maximize();
     }
 

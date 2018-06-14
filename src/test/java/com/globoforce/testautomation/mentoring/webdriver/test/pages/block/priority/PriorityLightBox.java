@@ -18,6 +18,12 @@ public class PriorityLightBox extends HtmlElement {
     @FindBy(xpath = "//button[@class='btn btn--priority']")
     private Button actionButton;
 
+    @FindBy(xpath = "//button[@class='btn btn--priority btn--toggle-split']")
+    private Button dropdownButton;
+
+    @FindBy(xpath = "//button[@class='dropdown-item' and text()='Delete']")
+    private Button deleteButton;
+
     public void setTitle(String title) {
         if (!Strings.isNullOrEmpty(title)) {
             titleTextInput.clear();
@@ -35,5 +41,14 @@ public class PriorityLightBox extends HtmlElement {
     public void clickActionButton() {
         actionButton.click();
     }
+
+    public void clickDropdownButton() {
+        dropdownButton.click();
+    }
+
+    public void clickDeleteButton() {
+        deleteButton.click();
+    }
+
 
 }

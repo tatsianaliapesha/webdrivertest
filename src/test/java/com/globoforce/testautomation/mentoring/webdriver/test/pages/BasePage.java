@@ -15,8 +15,8 @@ public class BasePage {
 
     protected final WebDriver webdriver;
 
-    protected final int PAGE_LOAD_TIMEOUT = 300;
-    protected final int IMPLICITLY_WAIT_TIMEOUT = 300;
+    protected final int PAGE_LOAD_TIMEOUT = 15;
+    protected final int IMPLICITLY_WAIT_TIMEOUT = 10;
 
     public BasePage(WebDriver driver) {
         webdriver = driver;
