@@ -20,15 +20,15 @@ public class BaseTest {
     public void startDriver(@Optional("chrome") String browser) {
 
         if (browser.equals("firefox")) {
-            System.setProperty("webdriver.gecko.driver", ".\\src\\test\\resources\\geckodriver.exe");
+            System.setProperty("webdriver.gecko.driver", ".\\src\\test\\resources\\drivers\\geckodriver.exe");
             driver = new FirefoxDriver();
         }
         if (browser.equals("chrome")) {
-            System.setProperty("webdriver.chrome.driver", ".\\src\\test\\resources\\chromedriver.exe");
+            System.setProperty("webdriver.chrome.driver", ".\\src\\test\\resources\\drivers\\chromedriver.exe");
             driver = new ChromeDriver();
         }
         if (browser.equals("ie")) {
-            System.setProperty("webdriver.ie.driver", ".\\src\\test\\resources\\IEDriverServer.exe");
+            System.setProperty("webdriver.ie.driver", ".\\src\\test\\resources\\drivers\\IEDriverServer.exe");
             driver = new InternetExplorerDriver();
         }
 

@@ -6,7 +6,7 @@ import org.testng.annotations.Parameters;
 
 public class BaseConversationsTest extends BaseTest {
 
-    private static final String URL = "https://test-web3-05.corp.globoforce.com/conversations/#!dashboard/%s/%s";
+    private static final String URL = "https://test-web1-05.corp.globoforce.com/conversations/#!dashboard/%s/%s";
 
     @BeforeClass
     @Parameters({"clientName", "userId", "userName", "password"})
