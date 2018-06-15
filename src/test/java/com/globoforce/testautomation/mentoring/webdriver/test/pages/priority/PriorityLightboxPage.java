@@ -1,44 +1,68 @@
 package com.globoforce.testautomation.mentoring.webdriver.test.pages.priority;
 
 import com.globoforce.testautomation.mentoring.webdriver.test.pages.BasePage;
-import com.globoforce.testautomation.mentoring.webdriver.test.pages.ConversationsDashboard;
-import com.globoforce.testautomation.mentoring.webdriver.test.pages.block.priority.PriorityLightBox;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.FindBy;
+import org.testng.util.Strings;
+import ru.yandex.qatools.htmlelements.element.Button;
+import ru.yandex.qatools.htmlelements.element.TextInput;
 
 public class PriorityLightboxPage extends BasePage {
 
-    private PriorityLightBox priorityLightBox;
+    private static final String PRIORITY_LIGHTBOX_PAGE = "//gf-priority-details";
+
+    @FindBy(xpath = PRIORITY_LIGHTBOX_PAGE + "//input[@class='mergedInputs-inputTitle normalizePlaceholder']")
+    private TextInput titleTextInput;
+
+    @FindBy(xpath = PRIORITY_LIGHTBOX_PAGE + "//textarea[@class='superTextarea-field']")
+    private TextInput descriptionTextInput;
+
+    @FindBy(xpath = PRIORITY_LIGHTBOX_PAGE + "//button[@class='btn btn--priority']")
+    private Button actionButton;
+
+    @FindBy(xpath = PRIORITY_LIGHTBOX_PAGE + "//button[@class='btn btn--priority btn--toggle-split']")
+    private Button dropdownButton;
+
+    @FindBy(xpath = PRIORITY_LIGHTBOX_PAGE + "//div[@class='dropdown-menu dropdown-menu--priority']//button[2]")
+    private Button deleteButton;
 
     public PriorityLightboxPage(WebDriver driver) {
         super(driver);
     }
 
     public PriorityLightboxPage setPriorityTitle(String title) {
-        priorityLightBox.setTitle(title);
+        if (!Strings.isNullOrEmpty(title)) {
+            titleTextInput.clear();
+            titleTextInput.sendKeys(title);
+        }
         return this;
     }
 
     public PriorityLightboxPage setPriorityDescription(String description) {
-        priorityLightBox.setDescription(description);
+        if (!Strings.isNullOrEmpty(description)) {
+            descriptionTextInput.clear();
+            descriptionTextInput.sendKeys(description);
+        }
         return this;
     }
 
     public PriorityLightboxPage clickOnPriorityActionButton() {
-        priorityLightBox.clickActionButton();
+        waitUntilClickable(actionButton);
+        actionButton.click();
         return this;
     }
 
     public PriorityLightboxPage clickDropdownButton() {
-        priorityLightBox.clickDropdownButton();
+        waitUntilClickable(dropdownButton);
+        dropdownButton.click();
         return this;
     }
 
     public PriorityLightboxPage clickDeleteButton() {
-        priorityLightBox.clickDeleteButton();
+        waitUntilClickable(deleteButton);
+        deleteButton.click();
         return this;
     }
-
-
 
 
 }
