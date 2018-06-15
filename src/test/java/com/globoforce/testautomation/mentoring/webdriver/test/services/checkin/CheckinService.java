@@ -14,10 +14,13 @@ public class CheckinService {
     }
 
     public void createCheckin(CheckinVO checkinVO) {
-        ConversationsDashboard conversationsDashboard = new ConversationsDashboard(driver);
-        conversationsDashboard.getCheckinSwimlane().clickOnNewCheckinButton();
-        CheckinLightboxPage checkinLightboxPage = new CheckinLightboxPage(driver);
-        checkinLightboxPage.setCheckinTitle(checkinVO.getTitle()).setCheckinDescription(checkinVO.getDescription()).clickOnCheckinActionButton();
+        new ConversationsDashboard(driver)
+                .getCheckinSwimlane()
+                .clickOnNewCheckinButton();
+        new CheckinLightboxPage(driver)
+                .setCheckinTitle(checkinVO.getTitle())
+                .setCheckinDescription(checkinVO.getDescription())
+                .clickOnCheckinActionButton();
     }
 
     public void openCheckin(String checkinTitle) {

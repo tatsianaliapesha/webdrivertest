@@ -38,11 +38,7 @@ public class PriorityLightboxPage extends BasePage {
         return this;
     }
 
-    public ConversationsDashboard clickConfirmationYesButton() {
-        LightboxConfirmationPage lightboxConfirmationPage = new LightboxConfirmationPage(webdriver);
-        lightboxConfirmationPage.clickYes();
-        return new ConversationsDashboard(getWebDriver());
-    }
+
 
 
 }

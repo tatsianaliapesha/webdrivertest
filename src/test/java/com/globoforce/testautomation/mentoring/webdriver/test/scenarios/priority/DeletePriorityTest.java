@@ -10,6 +10,7 @@ public class DeletePriorityTest extends CreatePriorityTest {
     public void deletePriority() {
         PriorityService priorityService = new PriorityService(driver);
         priorityService.deletePriority(priorityTitle);
-        Assert.assertFalse(priorityService.isPriorityOnSwimlane(priorityTitle), "Priority with title " + priorityTitle + "was not deleted.");
+        Assert.assertFalse(priorityService.isPriorityOnSwimlane(priorityTitle),
+                "Priority with title " + priorityTitle + "was not deleted.");
     }
 }

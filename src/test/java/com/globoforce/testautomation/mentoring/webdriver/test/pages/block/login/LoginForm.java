@@ -36,9 +36,4 @@ public class LoginForm extends HtmlElement {
         logInButton.click();
     }
 
-    public void login(String username, String password) {
-        setUsername(username);
-        setPassword(password);
-        clickOnLogInButton();
-    }
 }

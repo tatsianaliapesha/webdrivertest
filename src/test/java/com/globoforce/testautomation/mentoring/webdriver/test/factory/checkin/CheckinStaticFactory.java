@@ -4,7 +4,7 @@ import com.globoforce.testautomation.mentoring.webdriver.test.entities.CheckinVO
 
 public class CheckinStaticFactory {
 
-    public static CheckinVO createRandomCheckin(String title, String description) {
+    public static CheckinVO createCheckin(String title, String description) {
         CheckinVO checkinVO = new CheckinVO();
         checkinVO.setTitle(title);
         checkinVO.setDescription(description);

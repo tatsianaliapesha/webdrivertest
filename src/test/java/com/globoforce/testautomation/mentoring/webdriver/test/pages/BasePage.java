@@ -44,10 +44,6 @@ public class BasePage {
         }
     }
 
-    public void navigateToUrl(String url) {
-        webdriver.navigate().to(url);
-    }
-
     public void waitUntilClickable(WebElement webElement) {
         new WebDriverWait(webdriver, 10)
                 .pollingEvery(Duration.ofSeconds(1))

@@ -48,9 +48,5 @@ public class ConversationsDashboard extends BasePage {
         return isElementPresent(By.xpath(priorityXp));
     }
 
-    public WebElement getElementByXpath(String locator, String parameter) {
-        By webElementLocator = By.xpath(String.format(locator, parameter));
-        return getWebDriver().findElement(webElementLocator);
-    }
 
 }

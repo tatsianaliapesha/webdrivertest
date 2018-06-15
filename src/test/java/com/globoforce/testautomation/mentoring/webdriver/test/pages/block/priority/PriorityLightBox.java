@@ -21,7 +21,7 @@ public class PriorityLightBox extends HtmlElement {
     @FindBy(xpath = "//button[@class='btn btn--priority btn--toggle-split']")
     private Button dropdownButton;
 
-    @FindBy(xpath = "//button[@class='dropdown-item' and text()='Delete']")
+    @FindBy(xpath = "//div[@class='dropdown-menu dropdown-menu--priority']//button[2]")
     private Button deleteButton;
 
     public void setTitle(String title) {

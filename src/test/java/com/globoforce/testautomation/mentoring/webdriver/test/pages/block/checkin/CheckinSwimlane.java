@@ -23,10 +23,12 @@ public class CheckinSwimlane extends HtmlElement {
     }
 
 
-    public WebElement getCheckinTitleElement(String checkinTitle) {
+    public HtmlElement getCheckinTitleElement(String checkinTitle) {
         String checkinCardXp = String.format(CHECKIN_CARD_TITLE, checkinTitle);
         WebElement checkinCardTitle = findElement(By.xpath(checkinCardXp));
-        return checkinCardTitle;
+        HtmlElement htmlElement = new HtmlElement();
+        htmlElement.setWrappedElement(checkinCardTitle);
+        return htmlElement;
     }
 
 

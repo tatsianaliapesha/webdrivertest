@@ -20,8 +20,8 @@ public class EditCheckinTest extends BaseConversationsTest {
 
     @BeforeClass
     public void setUpInitialData() {
-        checkinTitleInit = String.valueOf(rand.nextInt(999999));
-        checkinVO = CheckinStaticFactory.createRandomCheckin(checkinTitleInit, checkinTitleInit);
+        checkinTitleInit = String.valueOf(rand.nextInt(random_generator_int));
+        checkinVO = CheckinStaticFactory.createCheckin(checkinTitleInit, checkinTitleInit);
     }
 
     @Test
@@ -34,7 +34,7 @@ public class EditCheckinTest extends BaseConversationsTest {
     @Test(dependsOnMethods = "createCheckinWithManager")
     public void updateCreatedCheckin() {
         checkinService.openCheckin(checkinTitleInit);
-        checkinTitleUpd = String.valueOf(rand.nextInt(999999));
+        checkinTitleUpd = String.valueOf(rand.nextInt(random_generator_int));
         checkinService.editCheckinTitle(checkinTitleUpd);
         Assert.assertTrue(checkinService.isCheckinOnSwimlane(checkinTitleUpd), "Checkin with title " + checkinTitleUpd + "was not found.");
     }

@@ -19,8 +19,8 @@ public class CreatePriorityTest extends BaseConversationsTest {
 
     @BeforeClass
     public void setUpInitialData() {
-        priorityTitle = String.valueOf(rand.nextInt(999999));
-        priorityVO = PriorityStaticFactory.createRandomPriority(priorityTitle, priorityTitle);
+        priorityTitle = String.valueOf(rand.nextInt(random_generator_int));
+        priorityVO = PriorityStaticFactory.createPriority(priorityTitle, priorityTitle);
     }
 
     @Test
