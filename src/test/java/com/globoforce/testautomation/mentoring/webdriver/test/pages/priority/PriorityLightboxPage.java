@@ -58,10 +58,10 @@ public class PriorityLightboxPage extends BasePage {
         return this;
     }
 
-    public PriorityLightboxPage clickDeleteButton() {
+    public LightboxConfirmationPage clickDeleteButton() {
         waitUntilClickable(deleteButton);
         deleteButton.click();
-        return this;
+        return new LightboxConfirmationPage(getWebDriver());
     }
 
 

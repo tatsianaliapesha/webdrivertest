@@ -31,8 +31,8 @@ public class PriorityService {
                 .click();
         new PriorityLightboxPage(driver)
                 .clickDropdownButton()
-                .clickDeleteButton();
-        clickConfirmationYesButton();
+                .clickDeleteButton()
+                .clickYes();
         System.out.println("Priority is deleted.");
     }
 
@@ -41,7 +41,6 @@ public class PriorityService {
     }
 
     public ConversationsDashboard clickConfirmationYesButton() {
-        new LightboxConfirmationPage(driver).clickYes();
-        return new ConversationsDashboard(driver);
+        return new LightboxConfirmationPage(driver).clickYes();
     }
 }

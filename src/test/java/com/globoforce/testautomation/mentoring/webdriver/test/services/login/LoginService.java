@@ -13,10 +13,10 @@ public class LoginService {
     }
 
     public ConversationsDashboard login(String username, String password) {
-        LoginPage loginPage = new LoginPage(driver);
-        loginPage.setUsername(username);
-        loginPage.setPassword(password);
-        loginPage.clickLoginButton();
+        new LoginPage(driver)
+                .setUsername(username)
+                .setPassword(password)
+                .clickLoginButton();
         return new ConversationsDashboard(driver);
     }
 

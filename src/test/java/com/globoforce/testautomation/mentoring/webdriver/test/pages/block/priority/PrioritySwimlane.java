@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import ru.yandex.qatools.htmlelements.element.HtmlElement;
+import ru.yandex.qatools.htmlelements.element.Link;
 
 import java.util.List;
 
@@ -13,7 +14,7 @@ public class PrioritySwimlane extends HtmlElement {
     public static final String PRIORITY_TITLE = "//div[@class='prioritySection']//ul[@class='priorityList']//li[@class='priorityList-item']//span[text()='%s']";
 
     @FindBy(xpath = "//a[@class='btn btn--priority']//span")
-    private HtmlElement newPriorityLink;
+    private Link newPriorityLink;
 
     public void clickOnNewPriorityButton() {
         newPriorityLink.click();
