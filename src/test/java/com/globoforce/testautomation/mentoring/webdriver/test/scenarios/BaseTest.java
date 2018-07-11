@@ -1,17 +1,19 @@
 package com.globoforce.testautomation.mentoring.webdriver.test.scenarios;
 
 import com.globoforce.testautomation.mentoring.webdriver.test.driver.WebDriverSingleton;
+import com.globoforce.testautomation.mentoring.webdriver.test.utils.TestListener;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Optional;
-import org.testng.annotations.Parameters;
+import org.testng.annotations.*;
 
 import java.util.concurrent.TimeUnit;
 
+@Listeners(TestListener.class)
 public class BaseTest {
 
     protected WebDriver driver;
+
+    protected Logger logger = Logger.getLogger(getClass());
 
     @BeforeClass
     @Parameters({"browser"})

@@ -8,9 +8,11 @@ public class DeletePriorityTest extends CreatePriorityTest {
 
     @Test(description = "delete created priority and verify it is not displayed on a swimlane")
     public void deletePriority() {
+        logger.info("Delete priority test");
         PriorityService priorityService = new PriorityService(driver);
         priorityService.deletePriority(priorityTitle);
         Assert.assertFalse(priorityService.isPriorityOnSwimlane(priorityTitle),
                 "Priority with title " + priorityTitle + "was not deleted.");
+        Assert.fail("Fail test just to check if screenshot is created.");
     }
 }

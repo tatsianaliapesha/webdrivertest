@@ -25,6 +25,7 @@ public class CreatePriorityTest extends BaseConversationsTest {
 
     @Test
     public void createPriority() {
+        logger.info("Create priority test");
         priorityService = new PriorityService(driver);
         priorityService.createPriority(priorityVO);
         Assert.assertTrue(priorityService.isPriorityOnSwimlane(priorityTitle), "Priority with title " + priorityTitle + "was not created.");

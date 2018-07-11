@@ -26,6 +26,7 @@ public class EditCheckinTest extends BaseConversationsTest {
 
     @Test
     public void createCheckinWithManager() {
+        logger.info("Create check-in with manager test");
         checkinService = new CheckinService(driver);
         checkinService.createCheckin(checkinVO);
         Assert.assertTrue(checkinService.isCheckinOnSwimlane(checkinTitleInit), "Checkin with title " + checkinTitleInit + "was not created.");
@@ -33,6 +34,7 @@ public class EditCheckinTest extends BaseConversationsTest {
 
     @Test(dependsOnMethods = "createCheckinWithManager")
     public void updateCreatedCheckin() {
+        logger.info("Update created check-in test");
         checkinService.openCheckin(checkinTitleInit);
         checkinTitleUpd = String.valueOf(rand.nextInt(random_generator_int));
         checkinService.editCheckinTitle(checkinTitleUpd);
