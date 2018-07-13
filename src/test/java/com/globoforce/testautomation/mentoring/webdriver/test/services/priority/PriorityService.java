@@ -4,11 +4,14 @@ import com.globoforce.testautomation.mentoring.webdriver.test.entities.PriorityV
 import com.globoforce.testautomation.mentoring.webdriver.test.pages.ConversationsDashboard;
 import com.globoforce.testautomation.mentoring.webdriver.test.pages.priority.LightboxConfirmationPage;
 import com.globoforce.testautomation.mentoring.webdriver.test.pages.priority.PriorityLightboxPage;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 
 public class PriorityService {
 
     private WebDriver driver;
+
+    private Logger logger = Logger.getLogger(getClass());
 
     public PriorityService(WebDriver driver) {
         this.driver = driver;
@@ -33,7 +36,7 @@ public class PriorityService {
                 .clickDropdownButton()
                 .clickDeleteButton()
                 .clickYes();
-        System.out.println("Priority is deleted.");
+       logger.info("Priority is deleted.");
     }
 
     public boolean isPriorityOnSwimlane(String priorityTitle) {

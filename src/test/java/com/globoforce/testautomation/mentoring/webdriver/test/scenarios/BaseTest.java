@@ -1,7 +1,7 @@
 package com.globoforce.testautomation.mentoring.webdriver.test.scenarios;
 
 import com.globoforce.testautomation.mentoring.webdriver.test.driver.WebDriverSingleton;
-import com.globoforce.testautomation.mentoring.webdriver.test.utils.TestListener;
+import com.globoforce.testautomation.mentoring.webdriver.test.listeners.TestListener;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.*;

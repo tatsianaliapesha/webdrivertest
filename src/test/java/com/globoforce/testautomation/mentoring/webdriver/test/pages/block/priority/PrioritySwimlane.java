@@ -1,5 +1,6 @@
 package com.globoforce.testautomation.mentoring.webdriver.test.pages.block.priority;
 
+import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -10,6 +11,8 @@ import java.util.List;
 
 @FindBy(xpath = "//gf-priority-list")
 public class PrioritySwimlane extends HtmlElement {
+
+    private Logger logger = Logger.getLogger(getClass());
 
     public static final String PRIORITY_TITLE = "//div[@class='prioritySection']//ul[@class='priorityList']//li[@class='priorityList-item']//span[text()='%s']";
 
@@ -27,9 +30,9 @@ public class PrioritySwimlane extends HtmlElement {
         if (priorityList.size() == 1) {
             resultElement = priorityList.get(0);
         } else if (priorityList.size() > 1) {
-            System.out.println(String.format("More than one priority was found by exact match with '%s' title!", priorityTitle));
+            logger.info(String.format("More than one priority was found by exact match with '%s' title!", priorityTitle));
         } else if (priorityList.size() == 0) {
-            System.out.println(String.format("Priority with '%s' title was not found!", priorityTitle));
+            logger.info(String.format("Priority with '%s' title was not found!", priorityTitle));
         }
         return resultElement;
     }
